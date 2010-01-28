@@ -1,0 +1,83 @@
+<object name="Commun" type="cpp_schema">
+	<elements name="UsedLibraries" />
+	<elements name="UsedSchemas">
+		<element name="ChaineDeCaracteres" />
+		<element name="Flux" />
+		<element name="Traces" />
+		<element name="Conteneurs" />
+		<element name="Outils" />
+	</elements>
+	<objects name="Classes" objectType="cpp_class">
+		<object name="Objet" />
+		<object name="TypesUniversels" />
+		<object name="Synchronisateur" />
+		<object name="Buffer" />
+		<object name="AgentRecenseur" />
+		<object name="Exception" />
+		<object name="Instant" />
+		<object name="Classe" />
+		<object name="GestionnaireDeClasses" />
+		<object name="Reference" />
+	</elements>
+	<elements name="ExportedIncludes">
+		<element name="Objet" />
+		<element name="TypesUniversels" />
+		<element name="Buffer" />
+		<element name="AgentRecenseur" />
+		<element name="Exception" />
+		<element name="Instant" />
+		<element name="Classe" />
+		<element name="GestionnaireDeClasses" />
+		<element name="Reference" />
+		<element name="Booleen" />
+		<element name="Booleen3Etats" />
+		<element name="OperateurLogiqueBinaire" />
+		<element name="Reel" />
+		<element name="Angle" />
+		<element name="Macros" />
+	</elements>
+</object>
+<object name="CRC" type="cpp_schema">
+	<elements name="UsedLibraries" />
+	<elements name="UsedSchemas">
+		<element name="Commun" />
+	</elements>
+	<elements name="Classes">
+		<element name="CRC32" />
+	</elements>
+	<elements name="ExportedIncludes">
+		<element name="CRC32" />
+	</elements>
+</object>
+
+<object name="Base" type="cpp_shared_library">
+	<elements name="Schemas">
+		<element name="Commun" />
+		<element name="CRC" />
+		<element name="ChaineDeCaracteres" />
+		<element name="Application" />
+		<element name="Conteneurs" />
+		<element name="Flux" />
+		<element name="Messages" />
+		<element name="Environnement" />
+		<element name="Traces" />
+		<element name="Hasard" />
+		<element name="Outils" />
+		<element name="Unites" />
+		<element name="Temps" />
+	</elements>
+</object>
+
+
+<process name="_compile" type="cpp_class" />
+
+<process name="_compile" type="cpp_schema">
+	<param name="debug" type="boolean" default="false" />
+	<putenv name="schema" value="_targetName" />
+	<putenv name="debug" value="param.debug" />
+	<apply process="_compile" target="Classes.*" />
+	<apply process="_link" target="Classes" />
+</process>
+
+<process name="_exportIncludes" type="cpp_schema">
+</process>
