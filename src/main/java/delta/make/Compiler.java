@@ -8,6 +8,7 @@ import java.util.List;
 import delta.common.utils.system.externalCommands.ExternalCommand;
 
 /**
+ * Compiler interface.
  * @author DAM
  */
 public class Compiler
@@ -21,11 +22,19 @@ public class Compiler
 
   private CompilerConfiguration _cfg;
 
+  /**
+   * Constructor.
+   * @param cfg Configurtion.
+   */
   public Compiler(CompilerConfiguration cfg)
   {
     _cfg=cfg;
   }
 
+  /**
+   * Build a shared object.
+   * @param info Description of the compilation to do.
+   */
   public void buildSharedObject(CompilationTaskInfo info)
   {
     List<String> cmdLine=buildCommandLine(info);

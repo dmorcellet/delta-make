@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import delta.make.project.Schema;
 
 /**
+ * Task to compile a C++ file.
  * @author DAM
  */
 public class CompileCppFileTask
@@ -21,6 +22,12 @@ public class CompileCppFileTask
 
   private File _targetFile;
 
+  /**
+   * Constructor.
+   * @param env Environment.
+   * @param schema Parent schema.
+   * @param classFile Class file.
+   */
   public CompileCppFileTask(MakeEnvironment env, Schema schema, String classFile)
   {
     _env=env;
@@ -32,16 +39,26 @@ public class CompileCppFileTask
     _targetFile=fs.getObjectFile(libName,schemaName,_classFile);
   }
 
+  /**
+   * Do compilation.
+   */
   public void doIt()
   {
     buildCompilerCommandLine();
   }
 
+  /**
+   * Get the target file.
+   * @return the target file.
+   */
   public File getTargetFile()
   {
     return _targetFile;
   }
 
+  /**
+   * Build the compiler command line.
+   */
   private void buildCompilerCommandLine()
   {
     ProjectFileSystem fs=_env.getFileSystem();

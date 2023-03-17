@@ -8,6 +8,7 @@ import delta.make.project.Schema;
 import delta.make.project.SharedLibrary;
 
 /**
+ * Task to compile a shared library.
  * @author DAM
  */
 public class CompileSharedLibraryTask
@@ -15,12 +16,20 @@ public class CompileSharedLibraryTask
   private MakeEnvironment _env;
   private SharedLibrary _sharedLibrary;
 
+  /**
+   * Constructor.
+   * @param env Environment.
+   * @param sharedLibrary Shared library to build.
+   */
   public CompileSharedLibraryTask(MakeEnvironment env, SharedLibrary sharedLibrary)
   {
     _env=env;
     _sharedLibrary=sharedLibrary;
   }
 
+  /**
+   * Do compilation.
+   */
   public void doIt()
   {
     List<String> schemaNames=_sharedLibrary.getSchemaNames();

@@ -1,7 +1,8 @@
 package delta.make;
 
 /**
- * @author dm
+ * Configuration of the compiler.
+ * @author DAM
  */
 public class CompilerConfiguration
 {
@@ -10,6 +11,9 @@ public class CompilerConfiguration
   private boolean _exceptions;
   private boolean _optimization;
 
+  /**
+   * Constructor.
+   */
   public CompilerConfiguration()
   {
     _warnings=false;
@@ -18,28 +22,45 @@ public class CompilerConfiguration
     _optimization=false;
   }
 
+  /**
+   * Enable/disable warnings.
+   * @param warnings <code>true</code> to enable warnings, <code>false</code> to disable them.
+   */
   public void setWarningsEnabled(boolean warnings)
   {
     _warnings=warnings;
   }
 
+  /**
+   * Enable/disable debug.
+   * @param debug <code>true</code> to enable debug, <code>false</code> to disable it.
+   */
   public void setDebug(boolean debug)
   {
     _debug=debug;
   }
 
+  /**
+   * Enable/disable exceptions.
+   * @param exceptions <code>true</code> to enable exceptions, <code>false</code> to disable them.
+   */
   public void setExceptionsEnabled(boolean exceptions)
   {
     _exceptions=exceptions;
   }
 
+  /**
+   * Enable/disable optimization.
+   * @param optimization <code>true</code> to enable optimization, <code>false</code> to disable it.
+   */
   public void setOptimizationsEnabled(boolean optimization)
   {
     _optimization=optimization;
   }
 
   /**
-   * @return the warnings
+   * Indicates if warnings are enabled.
+   * @return <code>true</code> if they are, <code>false</code> otherwise.
    */
   public boolean areWarningsEnabled()
   {
@@ -47,7 +68,8 @@ public class CompilerConfiguration
   }
 
   /**
-   * @return the debug
+   * Indicates if debug is enabled.
+   * @return <code>true</code> if it is, <code>false</code> otherwise.
    */
   public boolean isDebugEnabled()
   {
@@ -55,7 +77,8 @@ public class CompilerConfiguration
   }
 
   /**
-   * @return the exceptions
+   * Indicates if exceptions are enabled.
+   * @return <code>true</code> if they are, <code>false</code> otherwise.
    */
   public boolean areExceptionsEnabled()
   {
@@ -63,7 +86,8 @@ public class CompilerConfiguration
   }
 
   /**
-   * @return the optimizations
+   * Indicates if optimizations are enabled.
+   * @return <code>true</code> if they are, <code>false</code> otherwise.
    */
   public boolean areOptimizationsEnabled()
   {

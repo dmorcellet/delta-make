@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import delta.make.project.Schema;
 
 /**
+ * Task to compile a schema.
  * @author DAM
  */
 public class CompileSchemaTask
@@ -19,6 +20,11 @@ public class CompileSchemaTask
   private Schema _schema;
   private File _targetFile;
 
+  /**
+   * Constructor.
+   * @param env Environment.
+   * @param schema Schema to build.
+   */
   public CompileSchemaTask(MakeEnvironment env, Schema schema)
   {
     _env=env;
@@ -33,11 +39,18 @@ public class CompileSchemaTask
     }
   }
 
+  /**
+   * Get the target file.
+   * @return the target file.
+   */
   public File getTargetFile()
   {
     return _targetFile;
   }
 
+  /**
+   * Do compilation. 
+   */
   public void doIt()
   {
     List<String> classes=_schema.getClasses();
