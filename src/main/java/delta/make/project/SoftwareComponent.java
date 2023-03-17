@@ -6,14 +6,12 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import delta.make.MakeLoggers;
-
 /**
  * @author DAM
  */
 public class SoftwareComponent
 {
-  private static final Logger _logger=MakeLoggers.getRootLogger();
+  private static final Logger LOGGER=Logger.getLogger(SoftwareComponent.class);
 
   private CppProject _project;
   private String _name;
@@ -42,7 +40,7 @@ public class SoftwareComponent
     Schema ret=_schemas.get(schemaName);
     if (ret!=null)
     {
-      _logger.warn("Cannot create child schema ["+schemaName+"]. Reusing old one.");
+      LOGGER.warn("Cannot create child schema ["+schemaName+"]. Reusing old one.");
     }
     else
     {

@@ -4,8 +4,6 @@ import java.io.File;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import delta.make.project.Schema;
 import delta.make.project.SharedLibrary;
 
@@ -14,8 +12,6 @@ import delta.make.project.SharedLibrary;
  */
 public class CompileSharedLibraryTask
 {
-  private static final Logger _logger=MakeLoggers.getRootLogger();
-
   private MakeEnvironment _env;
   private SharedLibrary _sharedLibrary;
 

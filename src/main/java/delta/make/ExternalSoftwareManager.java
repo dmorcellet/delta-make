@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
  */
 public class ExternalSoftwareManager
 {
-  private static final Logger _logger=MakeLoggers.getRootLogger();
+  private static final Logger LOGGER=Logger.getLogger(ExternalSoftwareManager.class);
 
   // Ordered map for external softwares
   private LinkedHashMap<String,ExternalSoftware> externalSoftwares;
@@ -24,7 +24,7 @@ public class ExternalSoftwareManager
     ExternalSoftware ret=externalSoftwares.get(softName);
     if (ret!=null)
     {
-      _logger.warn("Cannot create child external software ["+softName+"]. Reusing old one.");
+      LOGGER.warn("Cannot create child external software ["+softName+"]. Reusing old one.");
     }
     else
     {

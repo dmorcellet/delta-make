@@ -13,7 +13,7 @@ import delta.make.project.Schema;
  */
 public class CompileCppFileTask
 {
-  private static final Logger _logger=MakeLoggers.getRootLogger();
+  private static final Logger LOGGER=Logger.getLogger(CompileCppFileTask.class);
 
   private MakeEnvironment _env;
   private Schema _schema;
@@ -128,7 +128,7 @@ public class CompileCppFileTask
           }
           else
           {
-            _logger.error("Cannot find definition for software ["+softName+"]");
+            LOGGER.error("Cannot find definition for software ["+softName+"]");
           }
         }
       }

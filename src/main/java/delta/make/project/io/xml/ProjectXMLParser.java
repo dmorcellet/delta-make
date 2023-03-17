@@ -3,14 +3,12 @@ package delta.make.project.io.xml;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import delta.common.utils.xml.DOMParsingTools;
-import delta.make.MakeLoggers;
 import delta.make.project.CppProject;
 import delta.make.project.Schema;
 import delta.make.project.SharedLibrary;
@@ -22,8 +20,6 @@ import delta.make.project.SoftwareComponent;
  */
 public class ProjectXMLParser
 {
-  private static final Logger _logger=MakeLoggers.getRootLogger();
-
   // Tag names
   private static final String CPP_PROJECT_TAG="cppProject";
   private static final String SHARED_LIBRARY_TAG="sharedLibrary";

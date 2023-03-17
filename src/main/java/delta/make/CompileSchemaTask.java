@@ -13,7 +13,7 @@ import delta.make.project.Schema;
  */
 public class CompileSchemaTask
 {
-  private static final Logger _logger=MakeLoggers.getRootLogger();
+  private static final Logger LOGGER=Logger.getLogger(CompileSchemaTask.class);
 
   private MakeEnvironment _env;
   private Schema _schema;
@@ -27,9 +27,9 @@ public class CompileSchemaTask
     String libName=_schema.getParent().getName();
     String schemaName=_schema.getName();
     _targetFile=fs.getSchemaObjectFile(libName,schemaName);
-    if (_logger.isDebugEnabled())
+    if (LOGGER.isDebugEnabled())
     {
-      _logger.debug("Schema object file is ["+_targetFile+"]");
+      LOGGER.debug("Schema object file is ["+_targetFile+"]");
     }
   }
 
@@ -54,9 +54,9 @@ public class CompileSchemaTask
         subTask=new CompileCppFileTask(_env,_schema,className);
         subTask.doIt();
         targetObjFile=subTask.getTargetFile();
-        if (_logger.isDebugEnabled())
+        if (LOGGER.isDebugEnabled())
         {
-          _logger.debug("Added object file ["+targetObjFile+"]");
+          LOGGER.debug("Added object file ["+targetObjFile+"]");
         }
         linkInfo.addObjectFile(targetObjFile);
       }

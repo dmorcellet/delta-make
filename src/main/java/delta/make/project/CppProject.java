@@ -6,14 +6,12 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import delta.make.MakeLoggers;
-
 /**
  * @author DAM
  */
 public class CppProject
 {
-  private static final Logger _logger=MakeLoggers.getRootLogger();
+  private static final Logger LOGGER=Logger.getLogger(CppProject.class);
 
   private String _name;
   // Ordered map for shared libs
@@ -35,7 +33,7 @@ public class CppProject
     SharedLibrary ret=_sharedLibraries.get(libraryName);
     if (ret!=null)
     {
-      _logger.warn("Cannot create child shared library ["+libraryName+"]. Reusing old one.");
+      LOGGER.warn("Cannot create child shared library ["+libraryName+"]. Reusing old one.");
     }
     else
     {
