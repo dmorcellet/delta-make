@@ -45,6 +45,10 @@ public class ExternalSoftware
     _includePaths.add(path);
   }
 
+  /**
+   * Get the include paths.
+   * @return A list of include paths.
+   */
   public List<File> getIncludePaths()
   {
     List<File> ret=new ArrayList<File>(_includePaths.size());

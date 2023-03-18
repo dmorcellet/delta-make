@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 /**
+ * Base class for software components (libraries and executables).
  * @author DAM
  */
 public class SoftwareComponent
@@ -18,6 +19,11 @@ public class SoftwareComponent
   // Ordered map for schemas
   private LinkedHashMap<String,Schema> _schemas;
 
+  /**
+   * Constructor.
+   * @param project Parent project.
+   * @param name Component name.
+   */
   SoftwareComponent(CppProject project, String name)
   {
     _project=project;
@@ -25,16 +31,29 @@ public class SoftwareComponent
     _schemas=new LinkedHashMap<String,Schema>();
   }
 
+  /**
+   * Get the parent project.
+   * @return A project.
+   */
   public CppProject getProject()
   {
     return _project;
   }
 
+  /**
+   * Get the name of this component..
+   * @return A component name.
+   */
   public String getName()
   {
     return _name;
   }
 
+  /**
+   * Add a schema.
+   * @param schemaName Schema name.
+   * @return the newly built schema.
+   */
   public Schema addSchema(String schemaName)
   {
     Schema ret=_schemas.get(schemaName);
@@ -50,12 +69,21 @@ public class SoftwareComponent
     return ret;
   }
 
+  /**
+   * Get a schema using its name.
+   * @param schemaName Schema name.
+   * @return A schema or <code>null</code> if not found.
+   */
   public Schema getSchema(String schemaName)
   {
     Schema ret=_schemas.get(schemaName);
     return ret;
   }
 
+  /**
+   * Get the list of managed schemas.
+   * @return A list of schema names.
+   */
   public List<String> getSchemaNames()
   {
     List<String> ret=new ArrayList<String>(_schemas.size());

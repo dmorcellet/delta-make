@@ -8,6 +8,7 @@ import java.util.List;
 import delta.common.utils.system.externalCommands.ExternalCommand;
 
 /**
+ * Linker interface.
  * @author DAM
  */
 public class Linker
@@ -16,6 +17,10 @@ public class Linker
   private static final String RELOCATABLE_OBJECTS_OPTION="-r";
   private static final String SHARED_LIB_OPTION="-shared";
 
+  /**
+   * Link a shared library.
+   * @param info Linker task description.
+   */
   public void linkSharedLibrary(LinkTaskInfo info)
   {
     List<String> cmdLine=buildLinkSharedLibraryCommandLine(info);
@@ -59,6 +64,10 @@ public class Linker
     return ret;
   }
 
+  /**
+   * Link objects.
+   * @param info Linker task description.
+   */
   public void linkObjects(LinkTaskInfo info)
   {
     List<String> cmdLine=buildLinkObjectsCommandLine(info);

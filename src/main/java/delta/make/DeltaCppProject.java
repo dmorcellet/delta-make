@@ -11,6 +11,7 @@ import delta.make.project.CppProject;
 import delta.make.project.io.xml.ProjectXMLParser;
 
 /**
+ * C++ project "delta".
  * @author DAM
  */
 public class DeltaCppProject
@@ -18,6 +19,9 @@ public class DeltaCppProject
   private CppProject _project;
   private ExternalSoftwareManager _soft;
 
+  /**
+   * Constructor.
+   */
   public DeltaCppProject()
   {
     URL url=URLTools.getFromClassPath("deltaProject.xml",this);
@@ -34,11 +38,19 @@ public class DeltaCppProject
     buildExternalSoftware();
   }
 
+  /**
+   * Get the managed C++ project.
+   * @return A C++ project.
+   */
   public CppProject getProject()
   {
     return _project;
   }
 
+  /**
+   * Get the external software manager.
+   * @return the external software manager.
+   */
   public ExternalSoftwareManager getSoftManager()
   {
     return _soft;

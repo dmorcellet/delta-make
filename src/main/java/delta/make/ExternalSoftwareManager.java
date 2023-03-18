@@ -5,6 +5,7 @@ import java.util.LinkedHashMap;
 import org.apache.log4j.Logger;
 
 /**
+ * External software manager.
  * @author DAM
  */
 public class ExternalSoftwareManager
@@ -14,11 +15,19 @@ public class ExternalSoftwareManager
   // Ordered map for external softwares
   private LinkedHashMap<String,ExternalSoftware> externalSoftwares;
 
+  /**
+   * Constructor.
+   */
   public ExternalSoftwareManager()
   {
     externalSoftwares=new LinkedHashMap<String,ExternalSoftware>();
   }
 
+  /**
+   * Add an external software.
+   * @param softName Software name.
+   * @return the newly built external software.
+   */
   public ExternalSoftware addExternalSoftware(String softName)
   {
     ExternalSoftware ret=externalSoftwares.get(softName);
@@ -33,6 +42,11 @@ public class ExternalSoftwareManager
     return ret;
   }
 
+  /**
+   * Get an external software using its name.
+   * @param softName Software name.
+   * @return An external software or <code>null</code> if not found.
+   */
   public ExternalSoftware getSoftware(String softName)
   {
     ExternalSoftware ret=externalSoftwares.get(softName);

@@ -64,6 +64,10 @@ public class Schema
     _managedClassFiles.add(classFile);
   }
 
+  /**
+   * Get the list of classes in this schema.
+   * @return A list of class names.
+   */
   public List<String> getClasses()
   {
     return _managedClassFiles;

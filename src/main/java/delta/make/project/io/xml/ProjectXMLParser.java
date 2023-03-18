@@ -37,6 +37,12 @@ public class ProjectXMLParser
     // Nothing to do !!
   }
 
+  /**
+   * Parse a C++ project from the given XML tag.
+   * @param root Input tag.
+   * @return the parsed project.
+   * @throws Exception If an error occcurs.
+   */
   public CppProject parseProject(Element root) throws Exception
   {
     String tagName=root.getTagName();
