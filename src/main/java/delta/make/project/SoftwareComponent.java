@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Base class for software components (libraries and executables).
@@ -12,7 +13,7 @@ import org.apache.log4j.Logger;
  */
 public class SoftwareComponent
 {
-  private static final Logger LOGGER=Logger.getLogger(SoftwareComponent.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(SoftwareComponent.class);
 
   private CppProject _project;
   private String _name;

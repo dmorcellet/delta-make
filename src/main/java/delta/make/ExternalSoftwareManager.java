@@ -2,7 +2,8 @@ package delta.make;
 
 import java.util.LinkedHashMap;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * External software manager.
@@ -10,7 +11,7 @@ import org.apache.log4j.Logger;
  */
 public class ExternalSoftwareManager
 {
-  private static final Logger LOGGER=Logger.getLogger(ExternalSoftwareManager.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(ExternalSoftwareManager.class);
 
   // Ordered map for external softwares
   private LinkedHashMap<String,ExternalSoftware> externalSoftwares;

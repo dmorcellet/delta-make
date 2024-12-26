@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Description of a C++ project.
@@ -12,7 +13,7 @@ import org.apache.log4j.Logger;
  */
 public class CppProject
 {
-  private static final Logger LOGGER=Logger.getLogger(CppProject.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(CppProject.class);
 
   private String _name;
   // Ordered map for shared libs
